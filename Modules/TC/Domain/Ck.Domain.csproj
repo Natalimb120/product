@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E1FDBFD8-E7B1-4672-AF37-F8C2EC64AAD1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Corpo.TradeCredit.Domain</RootNamespace>
+    <AssemblyName>Corpo.TradeCredit.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Corpo.TradeCredit.Application">
+      <HintPath>..\..\..\WebApi\WindowsAuthenticationWebApi\Bin\Corpo.TradeCredit.Application.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Offer\Leader.cs" />
+    <Compile Include="Offer\Sum.cs" />
+    <Compile Include="Offer\Producer.cs" />
+    <Compile Include="Offer\IOfferRepository.cs" />
+    <Compile Include="Offer\Offer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Application\BuildingBlocks.Application.csproj">
+      <Project>{89952ad6-0c00-4765-bcff-779243f038ee}</Project>
+      <Name>BuildingBlocks.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Model\Model.csproj">
+      <Project>{B3A4B2C2-CA53-4F55-B340-A09C8E6689B8}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Shared\Corpo.Shared.csproj">
+      <Project>{8F6324D3-EA0C-4530-9137-85FB65414ED1}</Project>
+      <Name>Corpo.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Domain\Corpo.Shared.Domain.csproj">
+      <Project>{5AD0ED28-D28B-47B5-B417-5ACA2835FA5C}</Project>
+      <Name>Corpo.Shared.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Infrastructure\Corpo.Shared.Infrastructure\Corpo.Shared.Infrastructure.csproj">
+      <Project>{4166C570-3C25-4AF4-AB73-8DB0C1161754}</Project>
+      <Name>Corpo.Shared.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
